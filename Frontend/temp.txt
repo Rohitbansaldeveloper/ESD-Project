@@ -1,0 +1,14 @@
+1) To add domainId as foreign key in students table:
+alter table students add constraint fk_domainId foreign key (domain) references domains (domain_id);
+
+2) Login email:
+select u1_0.user_id, u1_0.email, u1_0.name, u1_0.password, u1_0.role from user u1_0 where u1_0.email=?;
+
+3) View domains:
+select d1_0.domain_id, d1_0.batch, d1_0.capacity, d1_0.program, d1_0.qualification from domains d1_0;
+
+4) View students based on domains:
+select s1_0.student_id, s1_0.cgpa, s1_0.domain, s1_0.email, s1_0.first_name, s1_0.graduation_year, s1_0.last_name, s1_0.photograph_path, s1_0.placement_id, s1_0.roll_number, s1_0.specialisation, s1_0.total_credits from students s1_0 where s1_0.domain=?;
+
+5) Insert domain in the domains table:
+insert into domains (batch, capacity, program, qualification) values (?, ?, ?, ?);
